@@ -58,6 +58,13 @@ class GameViewModel : ViewModel() {
         }
     }
 
+    fun skipWord() {
+        updateGameState(_uiState.value.score)
+
+        // Reset user guess.
+        updateUserGuess("")
+    }
+
     private fun pickRandomWordAndShuffle(): String {
         // Continue picking up a new random word until you get one that hasn't been used before.
         currentWord = allWords.random()
